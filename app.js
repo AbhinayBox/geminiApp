@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const bodyParser = require('body-parser');
+
 app.use(bodyParser.json());
+app.use(cors());
+
 const nodemon = require('nodemon');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 app.post('/getResponse', (req, res) => {
